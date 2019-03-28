@@ -1,0 +1,41 @@
+moveStop
+rs -v=0.02
+
+kp_p{10,12,70,5,6,3}
+kp_v{270,360,120,120,60,25}
+ki_v{2,18,20.0,0.6,0.5,0.5}
+
+
+vt_limit=0.05
+fi_limit=5
+moveJPID -m=5 --pos=0.3 --kp_p=3 --kp_v=25 --ki_v=0.5
+moveJPID -m=5 --pos=0 --kp_p=3 --kp_v=25 --ki_v=0.5
+
+vt_limit=0.05
+fi_limit=5
+moveJPID -m=4 --pos=0.3 --kp_p=6 --kp_v=60 --ki_v=0.5
+moveJPID -m=4 --pos=0 --kp_p=6 --kp_v=60 --ki_v=0.5
+
+
+vt_limit=0.05
+fi_limit=10
+moveJPID -m=3 --pos=0.3 --kp_p=5 --kp_v=120 --ki_v=0.6
+moveJPID -m=3 --pos=0 --kp_p=5 --kp_v=120 --ki_v=0.6
+
+
+vt_limit=0.05
+fi_limit=10
+moveJPID -m=2 --pos=0.3 --kp_p=70 --kp_v=120 --ki_v=20
+moveJPID -m=2 --pos=0 --kp_p=70 --kp_v=120 --ki_v=20
+
+
+vt_limit=0.05
+fi_limit=10
+moveJPID -m=1 --pos=0.3 --kp_p=12 --kp_v=360 --ki_v=18
+moveJPID -m=1 --pos=0 --kp_p=12 --kp_v=360 --ki_v=18
+
+
+vt_limit=0.05
+fi_limit=15
+moveJPID -m=0 --pos=0.3 --kp_p=10 --kp_v=270 --ki_v=2
+moveJPID -m=0 --pos=0 --kp_p=10 --kp_v=270 --ki_v=2

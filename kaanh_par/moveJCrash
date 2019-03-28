@@ -1,0 +1,20 @@
+moveJRC -m=5
+
+moveEAP --begin_pos=0.1 --pos=0.16 --vel=0.02 --acc=0.1
+moveEAP --begin_pos=0.1 --pos=-0.16 --vel=0.02 --acc=0.1
+
+rs --pos={0.5,0.39,0.79,0.5,0.4,0.5,0.01} -v=0.02
+
+rs --pos={0.5,0.3925,0.7899,0.5,0.5,0.5,0.01} -v=0.02
+
+
+moveStop
+
+moveJCrash --pqt={0.42,0.0,0.45,0,0,0,1}
+moveJCrash --pqt={0.5,0.3925,0.7899,0,0,0,1}
+
+
+moveJCrash --xyz={0,0,-0.1}
+moveJCrash --xyz={0.15,0,0}
+moveJCrash --xyz={0.01,-0.2,0}
+moveJCrash --xyz={0.01,0,-0.1}
