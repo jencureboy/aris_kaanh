@@ -18,7 +18,7 @@ include_directories(${aris_INCLUDE_DIRS})
 message(${aris_DIR})
 
 # user program started...
-set(SOURCE_FILES src/main.cpp src/kaanh.cpp src/kaanh.h src/forcecontrol.cpp src/forcecontrol.h)
+set(SOURCE_FILES src/main.cpp src/kaanh.cpp src/kaanh.h)
 add_executable(kaanh ${SOURCE_FILES})
 if(UNIX)
 	target_link_libraries(kaanh ${aris_LIBRARIES} atomic)
