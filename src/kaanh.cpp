@@ -89,14 +89,14 @@ namespace kaanh
     auto createModelRokae()->std::unique_ptr<aris::dynamic::Model>
 	{
 		aris::dynamic::PumaParam param;
-        param.d1 = 0.380;
-        param.a1 = 0.03;
-        param.a2 = 0.340;
+        param.d1 = 0.3295;
+        param.a1 = 0.04;
+        param.a2 = 0.275;
 		param.d3 = 0.0;
-        param.a3 = 0.035;
-        param.d4 = 0.335;
+        param.a3 = 0.025;
+        param.d4 = 0.28;
 
-        param.tool0_pe[2] = 0.083;
+        param.tool0_pe[2] = 0.078;
 
 		auto model = aris::dynamic::createModelPuma(param);
 		/*
