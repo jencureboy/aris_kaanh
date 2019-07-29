@@ -26,7 +26,7 @@
 // Default setting
 #define DXL_ID                          1                   // Dynamixel ID: 1
 #define BAUDRATE                        57600
-#define DEVICENAME                      "/dev/ttyUSB0"      // Check which port is being used on your controller
+#define DEVICENAME                      "/dev/ttyUSB1"      // Check which port is being used on your controller
                                                             // ex) Windows: "COM1"   Linux: "/dev/ttyUSB0" Mac: "/dev/tty.usbserial-*"
 
 #define TORQUE_ENABLE                   1                   // Value for enabling the torque
@@ -134,7 +134,7 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::Rate loop_rate(2); //2hz 
+  ros::Rate loop_rate(50); //2hz 
   ros::Publisher chatter_pub = n.advertise<controller::motorpos>("motorpos_topic", 1000);
   ros::ServiceServer service = n.advertiseService("gettargetpos", exector);
   // return 0;
@@ -234,7 +234,8 @@ int main(int argc, char **argv)
     //   index = 0;
     // }
     controller::motorpos msg;
-    msg.angular = dxl_present_position/SCALING; //dxl_present_position [0-4096]
+    //msg.angular = dxl_present_position/SCALING; //dxl_present_position [0-4096]
+    msg.angular = dxl_present_position/SCALING;
     chatter_pub.publish(msg);
     ros::spinOnce();
     loop_rate.sleep();
@@ -253,6 +254,6 @@ int main(int argc, char **argv)
 
   // Close port
   portHandler->closePort();
-
+  //ros::spin();
   return 0;
 }

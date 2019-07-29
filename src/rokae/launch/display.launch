@@ -1,0 +1,37 @@
+<launch>
+  <arg
+    name="model" />
+  <arg
+    name="gui"
+    default="True" />
+  <param
+    name="robot_description"
+    textfile="$(find rokae)/urdf/rokae.urdf" />
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher" />
+
+
+  <node
+    name="move_Node2"
+    pkg="rokae"
+    type="move_Node2"
+    />
+
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find rokae)/urdf.rviz" />
+
+
+
+
+</launch>

@@ -23,6 +23,10 @@ int main(int argc, char** argv)
     tf::TransformBroadcaster broadcaster;   
     //设置一个发布者，将消息topic(joint_states)发布出去,发布到相应的节点中去
     ros::Rate loop_rate(10);    //这个设置的太大，效果很不好，目前觉得为10最好了
+
+
+
+
     const double degree = M_PI/180;
     const double radius = 2;
     int i=-69;

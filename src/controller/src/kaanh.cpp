@@ -78,8 +78,8 @@ namespace kaanh
 				"</EthercatMotion>";
 
 			controller->slavePool().add<aris::control::EthercatMotion>().loadXmlStr(xml_str);
-
 		}
+
 		return controller;
 	}
     //set DH parameters

@@ -230,3 +230,7 @@ target_link_libraries(fake_Client2 ${catkin_LIBRARIES} ${aris_LIBRARIES} atomic 
 
 add_executable(RobotJoy src/RobotJoy.cpp)
 target_link_libraries(RobotJoy ${catkin_LIBRARIES} ${aris_LIBRARIES} atomic pthread stdc++fs dxl_x64_cpp)
+
+
+add_executable(steering_engine src/steering_engine.cpp)
+target_link_libraries(steering_engine ${catkin_LIBRARIES} ${aris_LIBRARIES} atomic pthread stdc++fs dxl_x64_cpp)

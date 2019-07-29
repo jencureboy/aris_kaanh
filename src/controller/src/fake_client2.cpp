@@ -31,13 +31,13 @@ int main(int argc, char **argv)
   //ros::ServiceClient client = n.serviceClient<controller::interface>("getcmd");
   ros::ServiceClient client2 = n.serviceClient<controller::setpos>("gettargetpos");
   ros::Rate loop_rate(1);
-  ros::Subscriber sub = n.subscribe("kannh_topic", 1000, chatterCallback);
+  //ros::Subscriber sub = n.subscribe("kannh_topic", 1000, chatterCallback);
   //while (ros::ok())
   //{
     //std::string cmd="sh";
     //call_service(client,cmd);
 
-    call_service2(client2,350);
+    call_service2(client2,200);
     //ros::spinOnce();
     //loop_rate.sleep();
 
