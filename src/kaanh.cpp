@@ -176,6 +176,10 @@ namespace kaanh
 			}
 		}
 
+		/*
+		dynamic_cast<aris::control::EthercatController*>(controller.get())->scanInfoForCurrentSlaves();
+		dynamic_cast<aris::control::EthercatController*>(controller.get())->scanPdoForCurrentSlaves();
+		*/
 		return controller;
 	};
     //set DH parameters
