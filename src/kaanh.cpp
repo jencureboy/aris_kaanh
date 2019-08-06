@@ -15,7 +15,7 @@ namespace kaanh
 		{
 			double pos_offset[6]
 			{
-				0.0,   0.0,   0.0,   0.0,   0.0,   0.0
+                -0.438460099997905,   -1.01948430935116,   -1.00835441988747,   0.0315385382644258,   0.0943992339950059,   -3.4310965015334
 			};
 			double pos_factor[6]
 			{
@@ -56,7 +56,7 @@ namespace kaanh
 					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
@@ -90,7 +90,7 @@ namespace kaanh
 					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
@@ -124,7 +124,7 @@ namespace kaanh
 					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
@@ -158,7 +158,7 @@ namespace kaanh
 					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
 					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
@@ -176,24 +176,24 @@ namespace kaanh
 			}
 		}
 
-		/*
+        /*
 		dynamic_cast<aris::control::EthercatController*>(controller.get())->scanInfoForCurrentSlaves();
 		dynamic_cast<aris::control::EthercatController*>(controller.get())->scanPdoForCurrentSlaves();
-		*/
+        */
 		return controller;
 	};
     //set DH parameters
     auto createModelRokae()->std::unique_ptr<aris::dynamic::Model>
 	{
 		aris::dynamic::PumaParam param;
-        param.d1 = 0.3295;
-        param.a1 = 0.04;
-        param.a2 = 0.275;
-		param.d3 = 0.0;
-        param.a3 = 0.025;
-        param.d4 = 0.28;
+        param.d1 = 0.596;
+        param.a1 = 0.22;
+        param.a2 = 1.020;
+        param.d3 = 0.0;
+        param.a3 = 0.0;
+        param.d4 = 0.86;
 
-        param.tool0_pe[2] = 0.078;
+        param.tool0_pe[2] = 0.153;
 
 		auto model = aris::dynamic::createModelPuma(param);
 
@@ -332,13 +332,13 @@ namespace kaanh
 				double p, v, a;
 				aris::Size t_count;
 				aris::plan::moveAbsolute(target.count, param.begin_pos, param.begin_pos + param.target_pos, param.vel / 1000, param.acc / 1000 / 1000, param.dec / 1000 / 1000, p, v, a, t_count);
-				controller->motionAtAbs(i).setTargetPos(p);
-				target.model->motionPool().at(i).setMp(p);
+                controller->motionAtAbs(i).setTargetPos(p);
+                //target.model->motionPool().at(i).setMp(p);
 				total_count = std::max(total_count, t_count);
 			}
 		}
 		//3D模型同步
-        if (target.model->solverPool().at(1).kinPos())return -1;
+        //if (target.model->solverPool().at(1).kinPos())return -1;
 
 		// 打印 //
 		auto &cout = controller->mout();
