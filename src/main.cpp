@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	cs.resetModel(kaanh::createModelRokae().release());
 	cs.resetPlanRoot(kaanh::createPlanRootRokaeXB4().release());
 	cs.resetSensorRoot(new aris::sensor::SensorRoot);
+	cs.interfacePool().add<aris::server::WebInterface>("", "5866");
     cs.saveXmlFile(xmlpath.string().c_str());
 	//-------for rokae robot end//
 
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     cs.start();
 
 	//Start Web Socket//
-    cs.startWebSock("5866");
+    cs.open();
 
 	//Receive Command//
 	cs.runCmdLine();

@@ -368,7 +368,6 @@ namespace kaanh
 			lout << controller->motionAtAbs(i).targetPos() << ",";
 			lout << controller->motionAtAbs(i).actualPos() << ",";
             lout << controller->motionAtAbs(i).actualVel() << ",";
-            lout << controller->motionAtAbs(i).actualCur() << ",";
 		}
 		lout << std::endl;
 
