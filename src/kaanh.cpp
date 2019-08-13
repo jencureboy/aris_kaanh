@@ -51,20 +51,26 @@ namespace kaanh
 					"		<SyncManager is_tx=\"true\"/>"
 					"		<SyncManager is_tx=\"false\">"
 					"			<Pdo index=\"0x1600\" is_tx=\"false\">"
-					"				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"touch_probe\" index=\"0x60B8\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_tor\" index=\"0x60B2\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
-					"			<Pdo index=\"0x1A00\" is_tx=\"true\">"
-					"				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"vel_actual_value\" index=\"0x606c\" subindex=\"0x00\" size=\"32\"/>"
+                    "			<Pdo index=\"0x1a01\" is_tx=\"true\">"
+                    "				<PdoEntry name=\"error_code\" index=\"0x603F\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"vel_actual_value\" index=\"0x606C\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"cur_actual_value\" index=\"0x6077\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_status\" index=\"0x60b9\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_pos1\" index=\"0x60ba\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"digital_input\" index=\"0x60fd\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"	</SyncManagerPoolObject>"
@@ -85,20 +91,26 @@ namespace kaanh
 					"		<SyncManager is_tx=\"true\"/>"
 					"		<SyncManager is_tx=\"false\">"
 					"			<Pdo index=\"0x1600\" is_tx=\"false\">"
-					"				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"touch_probe\" index=\"0x60B8\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_tor\" index=\"0x60B2\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
-					"			<Pdo index=\"0x1A00\" is_tx=\"true\">"
-					"				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"vel_actual_value\" index=\"0x606c\" subindex=\"0x00\" size=\"32\"/>"
+                    "			<Pdo index=\"0x1a01\" is_tx=\"true\">"
+                    "				<PdoEntry name=\"error_code\" index=\"0x603F\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"vel_actual_value\" index=\"0x606C\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"cur_actual_value\" index=\"0x6077\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_status\" index=\"0x60b9\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_pos1\" index=\"0x60ba\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"digital_input\" index=\"0x60fd\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"	</SyncManagerPoolObject>"
@@ -118,21 +130,27 @@ namespace kaanh
 					"		<SyncManager is_tx=\"false\"/>"
 					"		<SyncManager is_tx=\"true\"/>"
 					"		<SyncManager is_tx=\"false\">"
-					"			<Pdo index=\"0x1600\" is_tx=\"false\">"
-					"				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
+                    "			<Pdo index=\"0x1600\" is_tx=\"false\">"
+                    "				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"touch_probe\" index=\"0x60B8\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_tor\" index=\"0x60B2\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
-					"			<Pdo index=\"0x1A00\" is_tx=\"true\">"
-					"				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"vel_actual_value\" index=\"0x606c\" subindex=\"0x00\" size=\"32\"/>"
+                    "			<Pdo index=\"0x1a01\" is_tx=\"true\">"
+                    "				<PdoEntry name=\"error_code\" index=\"0x603F\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"vel_actual_value\" index=\"0x606C\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"cur_actual_value\" index=\"0x6077\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_status\" index=\"0x60b9\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_pos1\" index=\"0x60ba\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"digital_input\" index=\"0x60fd\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"	</SyncManagerPoolObject>"
@@ -153,20 +171,26 @@ namespace kaanh
 					"		<SyncManager is_tx=\"true\"/>"
 					"		<SyncManager is_tx=\"false\">"
 					"			<Pdo index=\"0x1600\" is_tx=\"false\">"
-					"				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"target_vel\" index=\"0x60FF\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
-                    "				<PdoEntry name=\"max_tor\" index=\"0x6072\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"control_word\" index=\"0x6040\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_operation\" index=\"0x6060\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"target_pos\" index=\"0x607A\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"touch_probe\" index=\"0x60B8\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"targer_tor\" index=\"0x6071\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_tor\" index=\"0x60B2\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"offset_vel\" index=\"0x60B1\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"		<SyncManager is_tx=\"true\">"
-					"			<Pdo index=\"0x1A00\" is_tx=\"true\">"
-					"				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
-					"				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
-					"				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
-					"				<PdoEntry name=\"vel_actual_value\" index=\"0x606c\" subindex=\"0x00\" size=\"32\"/>"
+                    "			<Pdo index=\"0x1a01\" is_tx=\"true\">"
+                    "				<PdoEntry name=\"error_code\" index=\"0x603F\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"status_word\" index=\"0x6041\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"mode_of_display\" index=\"0x6061\" subindex=\"0x00\" size=\"8\"/>"
+                    "				<PdoEntry name=\"pos_actual_value\" index=\"0x6064\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"vel_actual_value\" index=\"0x606C\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"cur_actual_value\" index=\"0x6077\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_status\" index=\"0x60b9\" subindex=\"0x00\" size=\"16\"/>"
+                    "				<PdoEntry name=\"touch_probe_pos1\" index=\"0x60ba\" subindex=\"0x00\" size=\"32\"/>"
+                    "				<PdoEntry name=\"digital_input\" index=\"0x60fd\" subindex=\"0x00\" size=\"32\"/>"
 					"			</Pdo>"
 					"		</SyncManager>"
 					"	</SyncManagerPoolObject>"
@@ -344,17 +368,18 @@ namespace kaanh
 		auto &cout = controller->mout();
 		if (target.count % 100 == 0)
 		{
+            /*
 			cout << "target_pos" << ":" << param.target_pos << " ";
 			cout << "vel" << ":" << param.vel << " ";
 			cout << "acc" << ":" << param.acc << " ";
 			cout << "dec"  << ":" << param.dec << " ";
-			
+            */
 			for (Size i = 0; i < param.joint_active_vec.size(); ++i)
 			{
 				if (param.joint_active_vec[i])
 				{
 					cout << "actualPos" << ":" << controller->motionAtAbs(i).actualPos() << " ";
-                    cout << "actualVel" << ":" << controller->motionAtAbs(i).actualVel() << " ";
+                    cout << "actualtoq" << ":" << controller->motionAtAbs(i).actualToq() << " ";
 				}
 			}
 
@@ -367,7 +392,6 @@ namespace kaanh
 		{
 			lout << controller->motionAtAbs(i).targetPos() << ",";
 			lout << controller->motionAtAbs(i).actualPos() << ",";
-            lout << controller->motionAtAbs(i).actualVel() << ",";
 		}
 		lout << std::endl;
 
@@ -588,7 +612,7 @@ namespace kaanh
 
 		// 打印 //
 		auto &cout = controller->mout();
-		if (target.count % 200 == 0)
+		if (target.count % 500 == 0)
 		{
 			cout << "pm_target:" << std::endl;
 			for (Size i = 0; i < 16; i++)
@@ -626,6 +650,12 @@ namespace kaanh
 				cout << v_now[i] << "  ";
 			}
 			cout << std::endl;
+            cout << "toq:" << std::endl;
+            for (Size i = 0; i < 6; i++)
+            {
+                cout << controller->motionAtAbs(i).actualToq() << "  ";
+            }
+            cout << std::endl;
 		}
 
 		// log //
@@ -637,7 +667,6 @@ namespace kaanh
 			lout << v_now[i] << " ";
 			lout << a_now[i] << " ";
 			lout << controller->motionAtAbs(i).actualPos() << " ";
-            lout << controller->motionAtAbs(i).actualVel() << " ";
 		}
 		lout << std::endl;
 
@@ -852,6 +881,12 @@ namespace kaanh
 				cout << imp_->v_now[i] << "  ";
 			}
 			cout << std::endl;
+            cout << "toq:" << std::endl;
+            for (Size i = 0; i < 6; i++)
+            {
+                cout << controller->motionAtAbs(i).actualToq() << "  ";
+            }
+            cout << std::endl;
 			cout << "------------------------------------------" << std::endl;
 		}
 
@@ -863,7 +898,6 @@ namespace kaanh
 			lout << imp_->v_now[i] << " ";
 			lout << imp_->a_now[i] << " ";
 			lout << controller->motionAtAbs(i).actualPos() << " ";
-			lout << controller->motionAtAbs(i).actualVel() << " ";
 		}
 		lout << std::endl;
 
@@ -908,6 +942,7 @@ namespace kaanh
 		plan_root->planPool().add<aris::plan::Disable>();
 		plan_root->planPool().add<aris::plan::Mode>();
 		plan_root->planPool().add<aris::plan::Recover>();
+        plan_root->planPool().add<aris::plan::MoveAbsJ>();
 		auto &rs = plan_root->planPool().add<aris::plan::Reset>();
         rs.command().findParam("pos")->setDefaultValue("{0.5,0.353,0.5,0.5,0.5,0.5}");
 
